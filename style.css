@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 
-html{
+html {
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     min-height: 100vh;
     background-color: white;
@@ -17,37 +17,42 @@ body{
     align-items: center;
     justify-content: center;
 }
-.quote-container{
+
+.quote-container {
     width: auto;
     max-width: 900px;
     padding: 20px 30px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.4);
-    box-shadow: 0 10px 10px 10px rgba(0, 0,0,0.2);
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
-.quote-text{
+
+.quote-text {
     font-size: 2.75rem;
 }
-.long-quote{
+
+.long-quote {
     font-size: 2.4rem;
 }
-.fa-quote-left{
+
+.fa-quote-left {
     font-size: 4rem;
 }
-.quote-author{
+
+.quote-author {
     margin-top: 15px;
     font-size: 2rem;
-    font-weight: 400;   
+    font-weight: 400;
     font-style: italic;
 }
 
-.button-container{
+.button-container {
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
 }
 
-button{
+button {
     cursor: pointer;
     font-size: 1.2rem;
     height: 2.5rem;
@@ -60,32 +65,55 @@ button{
     box-shadow: 0rem 0.30rem rgba(121, 121, 121, 0.55);
 }
 
-button:hover{
+button:hover {
     filter: brightness(110%);
 
 }
 
-button:active{
-    transform: translate(0,0.3rem);
+button:active {
+    transform: translate(0, 0.3rem);
     box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }
 
-.twitter-button:hover{
+.twitter-button:hover {
     color: #38a1f3;
 }
-.fa-x-twitter{
+
+.fa-x-twitter {
     font-size: 1.5rem;
 }
 
+/* Loader */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #000;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Media Query: Tablet or Smaller */
-@media screen and (max-width: 1000px){
-    .quote-container{
+@media screen and (max-width: 1000px) {
+    .quote-container {
         margin: auto 10px;
     }
-    .quote-text{
+
+    .quote-text {
         font-size: 2.4rem;
     }
-    .fa-quote-left{
+
+    .fa-quote-left {
         font-size: 3rem;
     }
 }
