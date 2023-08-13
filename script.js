@@ -7,20 +7,18 @@ const loader = document.getElementById('loader');
 
 let apiQuotes = [];
 
-// Show Loading
-function loading() {
+function showLoadingSpinner() {
     loader.hidden = false;
     quoteContainer.hidden = true;
 }
-// Hide Loading
-function complete() {
+
+function removeLoadingSpinner() {
     quoteContainer.hidden = false;
     loader.hidden = true;
 }
 
-//Show New Quote
 function newQuote() {
-    loading();
+    showLoadingSpinner();
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     authorText.textContent = getAuthor(quote);
 
@@ -29,7 +27,7 @@ function newQuote() {
     else quoteText.classList.remove('long-quote');
     // Set Quote, Hide Loader
     quoteText.textContent = quote.text;
-    complete();
+    removeLoadingSpinner();
 }
 
 function getAuthor(quote) {
@@ -37,7 +35,7 @@ function getAuthor(quote) {
 }
 // Get quotes from API
 async function getQuotes() {
-    loading();
+    showLoadingSpinner();
     const apiUrl = 'https://jacintodesign.github.io/quotes-api/data/quotes.json';
     try {
         const response = await fetch(apiUrl);
